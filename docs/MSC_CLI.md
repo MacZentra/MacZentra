@@ -94,6 +94,13 @@ msc scan --path ~/Library | less -R          # 29. page colored output
 msc duplicates --path ~/Pictures > dupes.txt # 30. save a report
 ```
 
+## Real-world uses
+
+`msc` covers scan, duplicates, large files, developer junk, delete and diff. Treemap, uninstaller, snapshots, browser sweep and system monitor are desktop-app features and are not in the CLI.
+
+```text
+```
+
 ## Tips
 
 - Colors turn off automatically when output isn't a terminal, so piping and redirecting give clean text.
