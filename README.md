@@ -2,7 +2,7 @@
 
 **A fast, native storage analyzer and cleaner for Mac.** See what is filling your disk, then clean it up safely. Everything you remove goes to the Trash, so you can always put it back.
 
-[Website](https://maczentra.com/) · [Download](https://maczentra.com/) · [CLI reference](docs/MSC_CLI.md)
+[Website](https://maczentra.com/) · [Download](https://maczentra.com/) · [CLI reference](docs/MSC_CLI.md) · [msc-help.txt](msc-help.txt)
 
 ## Install
 

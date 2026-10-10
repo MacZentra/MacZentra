@@ -1,0 +1,73 @@
+MacZentra - headless CLI (Pro)
+
+USAGE
+  msc <command> [options]
+
+COMMANDS
+  dev-junk [--dry-run] [--apply]
+      Scan (and optionally clean) developer junk (Docker.raw, Node/Xcode/Python)
+  scan [--path <dir>]
+      Fast parallel disk-usage sweep of a directory
+  duplicates [--path <dir>]
+      Find exact-duplicate files under a directory
+  large-files [--path <dir>] [--threshold <MB>] [--age <days>] [--apply]
+      Find (and with --apply, delete) large/old files
+  delete <path>...
+      Move one or more paths to the Trash (recoverable)
+  diff [--dry-run]
+      Print the Git-style deletion preview to stdout
+  help
+      Show this help
+
+All deletions move items to the macOS Trash (recoverable).
+
+EXAMPLES
+
+  Help
+   1. msc --help
+   2. msc -h
+   3. msc help
+
+  Disk usage
+   4. msc scan
+   5. msc scan --path ~/Desktop
+   6. msc scan --path ~/Library/Caches
+   7. msc scan --path /Applications
+   8. msc scan --path /Volumes/Backup
+   9. msc scan --path ~/Downloads
+
+  Duplicates
+  10. msc duplicates
+  11. msc duplicates --path ~/Pictures
+  12. msc duplicates --path ~/Documents
+  13. msc duplicates --path ~/Downloads
+
+  Large and old files
+  14. msc large-files
+  15. msc large-files --threshold 100
+  16. msc large-files --threshold 1000
+  17. msc large-files --age 365
+  18. msc large-files --path ~/Movies --threshold 500 --age 180
+  19. msc large-files --path ~/Downloads --threshold 50 --apply
+
+  Developer junk
+  20. msc dev-junk
+  21. msc dev-junk --dry-run
+  22. msc dev-junk --apply
+
+  Delete (moves to Trash)
+  23. msc delete ~/Downloads/old-installer.dmg
+  24. msc delete ~/Downloads/a.zip ~/Downloads/b.zip
+  25. msc delete ~/Projects/old-app/node_modules
+  26. msc delete "$HOME/Desktop/Screen Recording.mov"
+
+  Preview and scripting
+  27. msc diff
+  28. msc diff --dry-run > cleanup-preview.patch
+  29. msc scan --path ~/Library | less -R
+  30. msc duplicates --path ~/Pictures > dupes.txt
+
+NOTES
+  - Requires a MacZentra Pro license.
+  - Preview with --dry-run or diff before using --apply or delete.
+  - Colors turn off automatically when output is piped or redirected.
