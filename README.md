@@ -49,7 +49,7 @@ Also: `msc insights`, `msc junk`, `msc monitor`, `msc snapshots`, `msc schedule 
 
 ```bash
 cd ~/Downloads
-spctl --assess --type open --context context:primary-signature -v MacZentra_1.0.3_universal.dmg
+spctl --assess --type open --context context:primary-signature -v MacZentra_1.0.4_universal.dmg
 ```
 
 You should see `accepted` and `source=Notarized Developer ID`.
