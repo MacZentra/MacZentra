@@ -23,6 +23,9 @@ MacZentra is signed and notarized by Apple, and it updates itself. Requires macO
 - **App uninstaller:** removes an app together with its leftovers, and finds orphaned files from apps you already deleted.
 - **System monitor:** CPU, memory, network, battery and disk health (S.M.A.R.T.).
 - **Privacy sweep:** history, cookies and caches for Safari, Chrome, Firefox, Brave, Edge, Arc and more.
+- **Alerts:** a menu-bar agent warns you when free disk space drops below your threshold (10% by default), and can warn when CPU or memory stay high. Optional live "CPU · RAM" readout in the menu bar.
+- **Scheduled cleanup:** run a cleanup daily, weekly or monthly. It runs in the background via macOS `launchd`, even when the app is closed, and notifies you when done.
+- **Protected folders:** choose folders that every scan and cleanup skips.
 - **Safety first:** a built-in guard refuses macOS system folders, and deletions use the Trash.
 
 ## Command line (Pro)
