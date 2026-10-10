@@ -43,7 +43,7 @@ msc delete ~/Downloads/old-installer.dmg
 msc diff --dry-run > cleanup-preview.patch
 ```
 
-See the full list of 30 examples in [docs/MSC_CLI.md](docs/MSC_CLI.md).
+Also: `msc insights`, `msc junk`, `msc protect add <dir>`, `msc license status`. `msc --help` shows all 62 examples; the same list is in [docs/MSC_CLI.md](docs/MSC_CLI.md).
 
 ## Verify the download
 
