@@ -24,6 +24,12 @@ COMMANDS
       Scan (and with --apply, clean) user caches, logs and old installers
   protect [list | add <dir> | remove <dir>]
       Manage folders every scan and cleanup skips
+  monitor
+      Live CPU, memory, network, battery, top processes, battery and disk health
+  snapshots
+      List local APFS snapshots (Time Machine vs system-managed)
+  schedule [show | set <daily|weekly|monthly> <HH:MM> [--type smart-care|junk|both] | off]
+      Show, set or turn off the scheduled background cleanup
   license [status]
       Show whether a Pro license is active on this Mac
   help
@@ -117,7 +123,7 @@ MORE EXAMPLES
   54. msc duplicates --path ~/Documents | wc -l
   55. command -v msc || echo "msc not installed"
 
-  New commands
+  Insights, junk, protected folders, license
   56. msc insights
   57. msc junk
   58. msc junk --apply
@@ -125,4 +131,14 @@ MORE EXAMPLES
   60. msc protect add ~/Documents/Taxes
   61. msc protect remove ~/Documents/Taxes
   62. msc license status
+
+  Monitoring, snapshots and scheduling
+  63. msc monitor
+  64. msc monitor | head -12
+  65. msc snapshots
+  66. msc schedule
+  67. msc schedule set daily 02:00
+  68. msc schedule set weekly 09:30 --type junk
+  69. msc schedule set monthly 03:00 --type both
+  70. msc schedule off
 ```
