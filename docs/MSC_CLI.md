@@ -99,6 +99,40 @@ msc duplicates --path ~/Pictures > dupes.txt # 30. save a report
 `msc` covers scan, duplicates, large files, developer junk, delete and diff. Treemap, uninstaller, snapshots, browser sweep and system monitor are desktop-app features and are not in the CLI.
 
 ```text
+  Find what is eating space
+  31. msc scan --path ~
+  32. msc scan --path ~/Library/Developer
+  33. msc scan --path ~/Library/Application\ Support
+  34. msc scan --path ~/Library/Containers
+  35. msc scan --path /Volumes/Photos
+  36. msc scan --path ~/Movies | head -30
+
+  Developer machines
+  37. msc dev-junk --dry-run
+  38. msc dev-junk --dry-run > before.txt
+  39. msc dev-junk --apply
+  40. msc scan --path ~/Projects
+  41. msc delete ~/Projects/old/node_modules ~/Projects/old2/node_modules
+
+  Photos, downloads and documents
+  42. msc duplicates --path ~/Pictures/Imports
+  43. msc duplicates --path ~/Downloads
+  44. msc large-files --path ~/Downloads --threshold 200 --age 90
+  45. msc large-files --path ~/Desktop --threshold 100
+  46. msc large-files --path ~/Movies --threshold 1000 --age 365
+
+  Safe cleanup workflow
+  47. msc diff --dry-run
+  48. msc diff --dry-run > preview.patch
+  49. msc large-files --path ~/Downloads --threshold 50 --apply
+
+  Automation
+  50. msc scan --path ~ > ~/Desktop/disk-report-$(date +%F).txt
+  51. alias cleanmac='msc dev-junk --dry-run && msc large-files --threshold 500'
+  52. 0 9 * * 1 /usr/local/bin/msc duplicates --path ~/Downloads > ~/dupes.txt   (crontab line)
+  53. msc scan --path ~ | grep -i "GB"
+  54. msc duplicates --path ~/Documents | wc -l
+  55. command -v msc || echo "msc not installed"
 ```
 
 ## Tips
